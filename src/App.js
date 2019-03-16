@@ -5,6 +5,7 @@ import './App.css';
 import FaceDetect from './FaceDetect';
 import ImageRecognition from './ImageRecognition';
 import Home from './Home';
+import Ocr from './Ocr';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/face" component={FaceDetect} />
         <Route path="/image" component={ImageRecognition} />
+        <Route path="/ocr" component={Ocr} /> 
       </div>
     </Router>
   );

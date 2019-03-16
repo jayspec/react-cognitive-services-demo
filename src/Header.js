@@ -15,6 +15,9 @@ function Header() {
               <li>
                 <Link to="/image/">Image Recognition</Link>
               </li>
+              <li>
+                <Link to="/ocr/">OCR</Link>
+              </li>
           </ul>
         </nav>
       </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import getFaceDetectionFromUrl from './faceDetectionService';
+import getFaceDetectionFromUrl from './services/faceDetectionService';
 
 function FaceDetect() {
     const defaultImageUrl = 'https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg';
@@ -31,7 +31,7 @@ function FaceDetect() {
         </button>
         </form>
         <div>
-            <img src={imageUrl} width="400" />
+            <img src={imageUrl} width="400" alt="some faces" />
         </div>
         <div>
             {faceDetectionJson}

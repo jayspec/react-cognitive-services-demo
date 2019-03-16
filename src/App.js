@@ -6,6 +6,8 @@ import FaceDetect from './FaceDetect';
 import ImageRecognition from './ImageRecognition';
 import Home from './Home';
 import Ocr from './Ocr';
+import Handwriting from './Handwriting';
+import Sentiment from './Sentiment';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/face" component={FaceDetect} />
         <Route path="/image" component={ImageRecognition} />
         <Route path="/ocr" component={Ocr} /> 
+        <Route path="/handwriting" component={Handwriting} /> 
+        <Route path="/sentiment" component={Sentiment} />
       </div>
     </Router>
   );

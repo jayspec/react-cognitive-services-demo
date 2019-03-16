@@ -18,6 +18,12 @@ function Header() {
               <li>
                 <Link to="/ocr/">OCR</Link>
               </li>
+              <li>
+                <Link to="/handwriting/">Handwriting Recognition</Link>
+              </li>
+              <li>
+                <Link to="/sentiment/">Sentiment Analysis</Link>
+              </li>
           </ul>
         </nav>
       </div>

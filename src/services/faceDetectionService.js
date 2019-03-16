@@ -1,4 +1,4 @@
-import callCognitiveService from './cognitiveServicesApi';
+import {callImageCognitiveService} from './cognitiveServicesApi';
 
 const apiKey = '9ea799ba0a3d4c6288117b96a534e76c';
 
@@ -11,7 +11,7 @@ function getFaceDetectionDataFromUrl(imageUrl) {
         returnFaceAttributes: 'age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise'
     };
 
-    return callCognitiveService(uriBase, params, imageUrl, apiKey)
+    return callImageCognitiveService(uriBase, params, imageUrl, apiKey)
         .then(response => {
             return response.text();
         });

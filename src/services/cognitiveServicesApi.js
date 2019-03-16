@@ -1,5 +1,17 @@
-function callCognitiveService(uriBase, params, imageUrl, apiKey) {
-    
+export function callImageCognitiveService(uriBase, params, imageUrl, apiKey) {
+  
+  const body = JSON.stringify({ url: imageUrl });
+  return callCognitiveService(uriBase, params, body, apiKey);
+}
+
+export function callTextCognitiveService(uriBase, params, text, apiKey) {
+  const document = { 'documents': [{'id': '1', 'language': 'en', 'text': text }] };
+  const body = JSON.stringify(document);
+
+  return callCognitiveService(uriBase, params, body, apiKey);
+}
+
+function callCognitiveService(uriBase, params, body, apiKey) {
   let queryString ='';
   let queryStringStarted = false;
 
@@ -10,7 +22,7 @@ function callCognitiveService(uriBase, params, imageUrl, apiKey) {
   // The ? separates the query string from the main part of the URI.
   // The & separates key/value pairs from each other
   //
-  
+
   for (const [key, value] of Object.entries(params)) {
     const separator = queryStringStarted ? '&' : '?';
     queryStringStarted = true;
@@ -26,7 +38,7 @@ function callCognitiveService(uriBase, params, imageUrl, apiKey) {
           'Content-Type': 'application/json',
           'Ocp-Apim-Subscription-Key' : apiKey
       },
-      body: JSON.stringify({ url: imageUrl })
+      body: body
   })
   .then(response => {
       if (!response.ok) {
@@ -36,5 +48,3 @@ function callCognitiveService(uriBase, params, imageUrl, apiKey) {
       }
   });
 }
-
-export default callCognitiveService;
